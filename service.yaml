@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: greetme
+spec:
+  selector:
+    app: greetme
+  ports:
+    - protocol: TCP
+      port: 80  # Exposed port on the service
+      targetPort: 8080  # Port inside the container
+  type: LoadBalancer  # Use 'LoadBalancer' for external access or 'ClusterIP' for internal access only
+
